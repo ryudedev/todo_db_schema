@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "workspace"
+version = "0.1.0"
+description = ""
+authors = ["ryudedev <2210441@ecc.ac.jp>"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.13"
+pydantic = "^2.11.7"
+pydantic-settings = "^2.10.1"
+mypy = "^1.17.1"
+flake8 = "^7.3.0"
+sqlalchemy = "^2.0.43"
+alembic = "^1.16.5"
+psycopg2 = "^2.9.10"
+p = "^1.5.0"
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

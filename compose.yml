@@ -1,0 +1,22 @@
+services:
+  db_schema:
+      build:
+        context: ${APP_DIR}/db_schema
+        dockerfile: Dockerfile
+        args:
+          HOST_UID: ${HOST_UID}
+          HOST_GID: ${HOST_GID}
+          HOST_USER_NAME: ${HOST_USER_NAME}
+      environment:
+        - PYTHON_PATH=${PYTHON_PATH}
+      <<: *common-volumes
+      volumes:
+        - ${APP_DIR}/db_schema:/workspace
+      command: sleep infinity
+      networks:
+        - internal
+
+networks:
+  internal:
+    name: todos.internal
+    external: true
